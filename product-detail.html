@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | TONY'S Watches</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>TONY'S Watches</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="product-detail">
+        <h2 id="productTitle">Product Title</h2>
+        <img id="productImage" src="" alt="Product Image">
+        <p id="productPrice"></p>
+        <p id="productDescription"></p>
+        <button class="add-to-cart">Add to Cart</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 TONY'S Watches Store</p>
+    </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const product = urlParams.get('product');
+
+        const productDetails = {
+            watch1: {
+                title: "Classic Gold",
+                image: "images/white gold.jpg",
+                price: "$500",
+                description: "A classic gold watch perfect for formal occasions."
+            },
+            watch2: {
+                title: "Gold Rose",
+                image: "images/rose gold.jpg",
+                price: "$450",
+                description: "A luxurious rose gold watch for modern elegance."
+            },
+            watch3: {
+                title: "LGBTQ+",
+                image: "images/LGBTQ+.jpg",
+                price: "$666",
+                description: "A colorful and unique watch supporting the LGBTQ+ community."
+            },
+            watch4: {
+                title: "Platinum Red",
+                image: "images/platinum_red.jpg",
+                price: "$1450",
+                description: "A sophisticated platinum watch with a bold red design."
+            },
+            watch5: {
+                title: "Solary",
+                image: "images/solary.jpg",
+                price: "$839",
+                description: "As shiny as the sun, this watch will brin a ray of light to your life."
+            },
+            watch6: {
+                title: "Platinum",
+                image: "images/platinum.jpg",
+                price: "$956",
+                description: "A classic platinum watch with a green interior"
+            },
+            watch7: {
+                title: "Dora",
+                image: "images/Dora_Prenium.jpg",
+                price: "$29999.99",
+                description: "Dora the goat"
+            },
+            watch8: {
+                title: "Atlas",
+                image: "images/Atlas.jpg",
+                price: "$746",
+                description: "A watch well adapted for travelers in high mountains and hills"
+            },
+        };
+
+        if (productDetails[product]) {
+            document.getElementById('productTitle').textContent = productDetails[product].title;
+            document.getElementById('productImage').src = productDetails[product].image;
+            document.getElementById('productPrice').textContent = productDetails[product].price;
+            document.getElementById('productDescription').textContent = productDetails[product].description;
+        } else {
+            document.getElementById('productTitle').textContent = "Product not found";
+        }
+    </script>
+
+</body>
+</html>
